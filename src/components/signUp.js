@@ -1,4 +1,5 @@
 import { newEl } from "./utils.js";
+import { validateRegForm, validateLogForm } from "./validation.js";
 
 const regFormFields = [
   {
@@ -42,7 +43,10 @@ function createSignUp() {
   signUp.setAttribute("id", "signup");
   const container = newEl("div");
   container.setAttribute("class", "form-container");
+  const errorDisplay = newEl("div");
+  errorDisplay.setAttribute("id", "errorDisplay");
   signUp.appendChild(container);
+  signUp.appendChild(errorDisplay);
 
   // registration
   const registration = newEl("div");
@@ -50,25 +54,34 @@ function createSignUp() {
   heading1.textContent = "Register Now!";
   registration.appendChild(heading1);
   const regForm = createForm(regFormFields);
+  regForm.setAttribute("id", "registration");
+  const regButton = newEl("input");
 
-  const button = newEl("button");
-  button.textContent = "Register";
+  regButton.type = "submit";
+  regButton.value = "Register";
   registration.appendChild(regForm);
-  registration.appendChild(button);
+  regForm.appendChild(regButton);
 
   // login
   const login = newEl("div");
   const heading2 = newEl("h3");
   heading2.textContent = "Login Now!";
   login.appendChild(heading2);
+
   const logForm = createForm(logFormFields);
-  const loginButton = newEl("button");
-  loginButton.textContent = "Login";
+  logForm.setAttribute("id", "login");
+  const loginButton = newEl("input");
+
+  loginButton.type = "submit";
+  loginButton.text = "Login";
   login.appendChild(logForm);
-  login.appendChild(loginButton);
+  logForm.appendChild(loginButton);
 
   container.appendChild(registration);
   container.appendChild(login);
+
+  regForm.addEventListener("submit", validateRegForm);
+  logForm.addEventListener("submit", validateLogForm);
 
   return signUp;
 }
@@ -76,13 +89,10 @@ function createSignUp() {
 function createForm(formData) {
   const form = newEl("form");
   formData.forEach((field) => {
-    const label = newEl("label");
-    label.textContent = field.label;
     const input = newEl("input");
     input.name = field.name;
     input.type = field.type;
     input.placeholder = field.placeholder;
-    form.appendChild(label);
     form.appendChild(input);
   });
   return form;
