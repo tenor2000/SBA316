@@ -76,3 +76,16 @@ button:hover {
   top: 0;
   z-index: 1;
 }
+
+#hero {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+#hero img {
+  border-radius: 20px;
+}

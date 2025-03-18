@@ -1,10 +1,16 @@
+// Cache at least one element using selectElementById.
 const main = document.getElementById("container");
+// Create at least one element using createElement.
 const newEl = (element) => document.createElement(element);
 
 // Data
 
 const title = "Welcome to Cat Facts!";
-const heroImg = "./src/images/cat.jpg";
+const heroObject = {
+  tagline: "Fun facts about cats.",
+  src: "https://images.pexels.com/photos/45170/kittens-cat-cat-puppy-rush-45170.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
+  alt: "kittens",
+};
 
 const navItems = [
   { text: "Home", href: "#" },
@@ -17,8 +23,10 @@ const navItems = [
 // Driver
 
 const header = createHeader(title);
+const hero = createHero(heroObject);
 
 main.appendChild(header);
+main.appendChild(hero);
 
 // Functions
 
@@ -50,4 +58,20 @@ function createNavbar(navArray) {
   });
 
   return nav;
+}
+
+function createHero(heroObj) {
+  const hero = newEl("div");
+  hero.setAttribute("id", "hero");
+  const img = newEl("img");
+  img.src = heroObj.src;
+  img.alt = heroObj.alt;
+  hero.appendChild(img);
+  // Use the parent-child-sibling relationship to navigate between elements at least once.
+  hero.firstChild.style.maxWidth = "800px";
+
+  const tagline = newEl("h3");
+  tagline.textContent = heroObj.tagline;
+  hero.appendChild(tagline);
+  return hero;
 }
