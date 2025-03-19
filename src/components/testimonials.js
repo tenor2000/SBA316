@@ -17,7 +17,7 @@ function createTestimonials(testimonialObjects) {
     card.style.textAlign = "center";
     card.setAttribute("class", "card");
     const quote = newEl("p");
-    quote.innerHTML = testimonial.quote;
+    quote.innerHTML = `"${testimonial.quote}"`;
     card.appendChild(quote);
     const author = newEl("p");
     author.textContent = `-${testimonial.author}`;

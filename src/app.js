@@ -28,6 +28,7 @@ const pricing = createPricing(priceData);
 const testimonials = createTestimonials(testimonialData);
 const action = createSignUp();
 
+// Use appendChild and/or prepend to add new elements to the DOM.
 main.appendChild(header);
 main.appendChild(hero);
 main.appendChild(features);

@@ -9,6 +9,7 @@ export function createCard(cardObj) {
   img.src = cardObj.src;
   img.alt = "kittens";
   img.style.maxWidth = "200px";
+  img.style.maxHeight = "200px";
   card.appendChild(img);
   const textArea = newEl("div");
   textArea.setAttribute("class", "text-area");

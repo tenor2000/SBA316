@@ -1,12 +1,10 @@
 import { newEl } from "./utils.js";
 
 export function validateRegForm(e) {
-  const errorDisplay = document.getElementById("errorDisplay");
   const userName = e.target.username.value;
   const userEmail = e.target.email.value;
   const userPassword = e.target.password.value;
   const passwordCheck = e.target.passwordConfirm.value;
-  console.log(e.target);
   let errorMessage = "";
 
   if (!validateUsername(userName)) {
@@ -159,7 +157,6 @@ export function validateRegForm(e) {
 }
 
 export function validateLogForm(e) {
-  const errorDisplay = document.getElementById("errorDisplay");
   const userName = e.target.username.value;
   const userPassword = e.target.password.value;
   let errorMessage = "";
@@ -206,6 +203,8 @@ export function validateLogForm(e) {
 }
 
 function displayMessage(text) {
+  // Cache at least one element using selectElementById.
+  const errorDisplay = document.getElementById("errorDisplay");
   clearContainer(errorDisplay);
   errorDisplay.style.display = "block";
   const message = newEl("p");

@@ -87,7 +87,6 @@ section {
   align-items: center;
   min-height: 100vh;
   width: 100%;
-  border: 1px solid red;
 }
 
 #container {
@@ -122,6 +121,11 @@ section {
 #errorDisplay {
   display: none;
   color: red;
+}
+
+.active {
+  background-color: var(--secondaryColor);
+  border-radius: 1rem;
 }
 
 .card {

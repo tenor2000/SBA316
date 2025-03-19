@@ -80,6 +80,7 @@ function createSignUp() {
   container.appendChild(registration);
   container.appendChild(login);
 
+  // Register at least two different event listeners and create the associated event handler functions.
   regForm.addEventListener("submit", validateRegForm);
   logForm.addEventListener("submit", validateLogForm);
 
