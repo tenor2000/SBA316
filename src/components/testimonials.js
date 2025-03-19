@@ -1,4 +1,4 @@
-import { newEl, createCard } from "./utils.js";
+import { newEl } from "./utils.js";
 
 function createTestimonials(testimonialObjects) {
   const testimonials = newEl("section");
@@ -12,18 +12,33 @@ function createTestimonials(testimonialObjects) {
   testimonials.appendChild(cardContainer);
 
   testimonialObjects.forEach((testimonial) => {
-    const card = newEl("div");
-    card.style.color = "black";
-    card.style.textAlign = "center";
-    card.setAttribute("class", "card");
-    const quote = newEl("p");
-    quote.innerHTML = `"${testimonial.quote}"`;
-    card.appendChild(quote);
-    const author = newEl("p");
-    author.textContent = `-${testimonial.author}`;
-    card.appendChild(author);
+    const card = createCard(testimonial);
     cardContainer.appendChild(card);
   });
   return testimonials;
 }
+
+function createCard(cardObj) {
+  const card = newEl("div");
+  card.setAttribute("class", "card testimonial-size magnify");
+
+  const img = newEl("img");
+  img.src = cardObj.src;
+  img.alt = cardObj.alt;
+  card.appendChild(img);
+
+  const textArea = newEl("div");
+  textArea.setAttribute("class", "textArea");
+  card.appendChild(textArea);
+
+  const paragraph = newEl("p");
+  const reviewer = newEl("p");
+  paragraph.innerHTML = `"${cardObj.quote}"`;
+  reviewer.textContent = `- ${cardObj.author}`;
+  textArea.appendChild(paragraph);
+  textArea.appendChild(reviewer);
+
+  return card;
+}
+
 export default createTestimonials;
