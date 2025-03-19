@@ -50,30 +50,32 @@ function createSignUp() {
 
   // registration
   const registration = newEl("div");
+  registration.setAttribute("class", "magnify");
   const heading1 = newEl("h3");
   heading1.textContent = "Register Now!";
   registration.appendChild(heading1);
   const regForm = createForm(regFormFields);
   regForm.setAttribute("id", "registration");
-  const regButton = newEl("input");
+  const regButton = newEl("button");
 
   regButton.type = "submit";
-  regButton.value = "Register";
+  regButton.textContent = "Register";
   registration.appendChild(regForm);
   regForm.appendChild(regButton);
 
   // login
   const login = newEl("div");
+  login.setAttribute("class", "magnify");
   const heading2 = newEl("h3");
   heading2.textContent = "Login Now!";
   login.appendChild(heading2);
 
   const logForm = createForm(logFormFields);
   logForm.setAttribute("id", "login");
-  const loginButton = newEl("input");
+  const loginButton = newEl("button");
 
   loginButton.type = "submit";
-  loginButton.text = "Login";
+  loginButton.textContent = "Login";
   login.appendChild(logForm);
   logForm.appendChild(loginButton);
 
@@ -87,10 +89,13 @@ function createSignUp() {
   return signUp;
 }
 
+// Include at least one form and/or input with HTML attribute validation.
 function createForm(formData) {
   const form = newEl("form");
   formData.forEach((field) => {
     const input = newEl("input");
+    // HTML validation attribute
+    input.setAttribute("required", "");
     input.name = field.name;
     input.type = field.type;
     input.placeholder = field.placeholder;

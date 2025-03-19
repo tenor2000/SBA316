@@ -22,7 +22,7 @@ function createFeatures(featureObjects) {
 
 function createCard(cardObj) {
   const card = newEl("div");
-  card.setAttribute("class", "card");
+  card.setAttribute("class", "card feature-size magnify");
 
   const img = newEl("img");
   img.src = cardObj.src;

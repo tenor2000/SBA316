@@ -33,13 +33,12 @@ function createNavbar(navArray) {
 }
 
 function setActive(e) {
-  console.log("Selected", e.target);
   if (e.target.tagName === "A") {
     // Cache at least one element using querySelector or querySelectorAll.
     const links = document.querySelectorAll("li a");
     // Iterate over a collection of elements to accomplish some task.
     links.forEach((link) => link.classList.remove("active"));
-    console.log("add active");
+    // Modify the style and/or CSS classes of an element in response to user interactions using the style or classList properties.
     e.target.classList.add("active");
   }
 }

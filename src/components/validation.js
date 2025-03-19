@@ -1,4 +1,4 @@
-import { newEl } from "./utils.js";
+import { newEl, clearContainer } from "./utils.js";
 
 export function validateRegForm(e) {
   const userName = e.target.username.value;
@@ -211,8 +211,4 @@ function displayMessage(text) {
   message.textContent = text;
   message.style.color = "red";
   errorDisplay.appendChild(message);
-}
-
-function clearContainer(container) {
-  container.innerHTML = "";
 }

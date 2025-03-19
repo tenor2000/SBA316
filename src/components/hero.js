@@ -4,7 +4,6 @@ function createHero(heroObjArray) {
   const hero = newEl("section");
   hero.setAttribute("id", "hero");
   const img = newEl("img");
-  img.setAttribute("class", "magnify");
   img.src = heroObjArray[0].src;
   img.alt = heroObjArray[0].alt;
   hero.appendChild(img);

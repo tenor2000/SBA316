@@ -33,7 +33,6 @@ body {
 }
 
 button {
-  cursor: pointer;
   padding: 0.5rem;
   border-radius: 0.5rem;
   border: 1px solid var(--quarternaryColor);
@@ -41,6 +40,11 @@ button {
   color: white;
   margin: 1rem;
   min-width: 6rem;
+}
+
+button:hover {
+  background-color: var(--secondaryColor);
+  cursor: pointer;
 }
 
 h1 {
@@ -81,7 +85,7 @@ li a:hover {
 form {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
   gap: 1rem;
 }
@@ -91,7 +95,7 @@ input {
   border-radius: 0.5rem;
   border: 1px solid var(--quarternaryColor);
   background-color: var(--card-background);
-  color: white;
+  color: var(--secondaryColor);
 }
 
 section {
@@ -133,6 +137,11 @@ section {
   margin: 1rem;
   cursor: pointer;
   border: 1px solid var(--quarternaryColor);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+#hero img:hover {
+  box-shadow: 0 0 20px 5px rgba(90, 90, 255, 0.7);
 }
 
 #errorDisplay {
@@ -185,11 +194,12 @@ section {
 }
 
 .magnify {
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 }
 
 .magnify:hover {
   transform: scale(1.05);
+  box-shadow: 0 0 20px 5px rgba(90, 90, 255, 0.7);
 }
 
 .form-container {
@@ -201,11 +211,14 @@ section {
 
 .form-container div {
   display: flex;
+  color: white;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
   background-color: var(--card-background);
-  height: 300px;
+  border: 1px solid var(--quarternaryColor);
+  height: 20rem;
+  width: 14rem;
   border-radius: 10px;
   box-shadow: var(--box-shadow);
   padding: 1rem;
