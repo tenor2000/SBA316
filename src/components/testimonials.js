@@ -12,24 +12,26 @@ function createTestimonials(testimonialObjects) {
   testimonials.appendChild(cardContainer);
 
   testimonialObjects.forEach((testimonial) => {
-    const card = createCard(testimonial);
+    const card = newEl("div");
+    card.setAttribute("class", "card testimonial-size magnify");
+    card.appendChild(createCard(testimonial));
     cardContainer.appendChild(card);
   });
   return testimonials;
 }
 
 function createCard(cardObj) {
-  const card = newEl("div");
-  card.setAttribute("class", "card testimonial-size magnify");
+  // Use the DocumentFragment interface or HTML templating with the cloneNode method to create templated content.
+  const frag = new DocumentFragment();
 
   const img = newEl("img");
   img.src = cardObj.src;
   img.alt = cardObj.alt;
-  card.appendChild(img);
+  frag.appendChild(img);
 
   const textArea = newEl("div");
   textArea.setAttribute("class", "textArea");
-  card.appendChild(textArea);
+  frag.appendChild(textArea);
 
   const paragraph = newEl("p");
   const reviewer = newEl("p");
@@ -38,7 +40,7 @@ function createCard(cardObj) {
   textArea.appendChild(paragraph);
   textArea.appendChild(reviewer);
 
-  return card;
+  return frag;
 }
 
 export default createTestimonials;
