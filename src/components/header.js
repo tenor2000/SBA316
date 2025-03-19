@@ -21,8 +21,9 @@ function createNavbar(navArray) {
   nav.appendChild(navBar);
 
   navArray.forEach((item) => {
-    const navItem = document.createElement("li");
-    const link = document.createElement("a");
+    // Use at least two Browser Object Model (BOM) properties or methods.
+    const navItem = window.document.createElement("li");
+    const link = window.document.createElement("a");
     link.href = item.href;
     link.textContent = item.text;
     navItem.appendChild(link);

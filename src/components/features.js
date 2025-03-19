@@ -47,7 +47,7 @@ function createCard(cardObj) {
   button.addEventListener("click", () => {
     // Modify the HTML or text content of at least one element in response to user interaction using innerHTML, innerText, or textContent.
     if (button.textContent == "Learn More") {
-      button.textContent = "Close";
+      button.textContent = "Learn Less";
       paragraph.textContent = cardObj.info;
       textArea.appendChild(paragraph);
     } else {

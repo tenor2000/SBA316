@@ -203,8 +203,8 @@ export function validateLogForm(e) {
 }
 
 function displayMessage(text) {
-  // Cache at least one element using selectElementById.
-  const errorDisplay = document.getElementById("errorDisplay");
+  // Use at least two Browser Object Model (BOM) properties or methods.
+  const errorDisplay = window.document.getElementById("errorDisplay");
   clearContainer(errorDisplay);
   errorDisplay.style.display = "block";
   const message = newEl("p");
