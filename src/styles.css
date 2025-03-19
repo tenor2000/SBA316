@@ -43,7 +43,7 @@ h1 {
 }
 
 h3 {
-  margin: 0.5rem;
+  margin: 1rem;
 
   color: black;
 }
@@ -125,6 +125,8 @@ section {
 #hero img {
   border-radius: 20px;
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.5);
+  margin: 1rem;
+  cursor: pointer;
 }
 
 #errorDisplay {
